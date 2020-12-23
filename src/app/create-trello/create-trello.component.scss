@@ -1,0 +1,12 @@
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.create-trello {
+    width: calc(100% - 18px);
+    margin: 5px 0px 10px;
+}

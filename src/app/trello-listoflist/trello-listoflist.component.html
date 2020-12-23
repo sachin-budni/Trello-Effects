@@ -1,0 +1,21 @@
+<div class="task-list_content" cdkDropList [cdkDropListData]="trelloListOfList"
+  (cdkDropListDropped)="drop($event)">
+  <div *ngFor="let trello of trelloListOfList.memberDetails; trackBy: trackByFn" cdkDrag [cdkDragData]="trello">
+    <div class="sac-card sac-card-small show">
+      <div class="row space-btw">
+        <span>{{trello.name}}</span>
+        <div class="icon row hide">
+          <button mat-icon-button (click)="edit(trello)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteTrelloList(trello.id)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="trelloListOfList.memberDetails.length === 0" class="sac-card sac-card-small">
+    <span>No Records ....</span>
+  </div>
+</div>

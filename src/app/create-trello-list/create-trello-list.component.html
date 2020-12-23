@@ -1,0 +1,13 @@
+<div class="row space-btw center">
+    <p *ngIf="!this.data.update" class="header-name"> Add New Card</p>
+    <p *ngIf="this.data.update" class="header-name">Edit Card</p>
+    <button class="btn-icon" (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<div class="column">
+    <form [formGroup]="trelloListOfListFormGroup" (ngSubmit)="addTrelloList(this.trelloListOfListFormGroup.value)">
+        <input type="text" autofocus class="create-trello w-100" placeholder="Card Name" formControlName="name" />
+        <button class="btn" type="submit">Submit</button>
+    </form>
+</div>

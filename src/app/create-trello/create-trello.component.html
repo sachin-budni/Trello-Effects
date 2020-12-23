@@ -1,0 +1,10 @@
+<div class="row space-btw center">
+    <p class="header-name">Add New Trello</p>
+    <button class="btn-icon"(click)="close()"><mat-icon>close</mat-icon></button>
+</div>
+<div class="column">
+    <form [formGroup]="trelloFormGroup" (ngSubmit)="addTrelloList(this.trelloFormGroup.value)">
+        <input autofocus type="text" class="create-trello w-100" placeholder="Trello Name" formControlName="name" />
+        <button class="btn" type="submit">Submit</button>
+    </form>
+</div>
